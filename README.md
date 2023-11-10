@@ -95,5 +95,24 @@ $user = $container->call($findUserById, ['id' => 3]);
 
 ## Define
 ```php
-tbc
+class Cache {
+    public function construct(private Logger $logger, private string $path) {
+    }
+}
+$container->set(Logger::class);
+$container->set(Cache::class, new Define(Cache::class));
+$cache = $container->get(Cache::class)->resolve(['path' => __DIR__]);
+```
+
+```php
+class User {
+    public function construct(private $name = 'guest') {
+    }
+    public function getName(): string {
+        return $this->name;
+    }
+}
+$container->set(new Define(User::class));
+$userA = $container->get(User::class)->resolve();
+$userB = $container->get(User::class)->resolve(['name' => 'Mlax']);
 ```
