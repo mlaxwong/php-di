@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class Container05BindWithAutoInjectionTest extends TestCase
 {
-    public function testBindingShouldAutowiredIfContractDefined(): void 
+    public function testBindingShouldAutowiredIfContractDefined(): void
     {
         $this->assertTrue(false);
     }

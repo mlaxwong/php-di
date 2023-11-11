@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class Container02SingletonTest extends TestCase
 {
-    public function testSingletonShouldPromiseSameInstance(): void 
+    public function testSingletonShouldPromiseSameInstance(): void
     {
         $this->assertTrue(false);
     }
