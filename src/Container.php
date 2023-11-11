@@ -2,6 +2,8 @@
 
 namespace MlaxWong\DI;
 
-class Container
+use MlaxWong\DI\Contracts\IContainer;
+
+class Container implements IContainer
 {
 }
