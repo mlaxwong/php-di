@@ -11,7 +11,7 @@ use MlaxWong\DI\Tests\Samples\WithDependencyAndParams;
 use MlaxWong\DI\Tests\Samples\WithoutConstructor;
 use PHPUnit\Framework\TestCase;
 
-class ResolverGetParams extends TestCase
+class ResolverGetParamsTest extends TestCase
 {
     public function testGetParamsWithClassContextWithoutConstructor(): void
     {
@@ -64,8 +64,6 @@ class ResolverGetParams extends TestCase
         });
         $this->assertEquals(['foo' => null, 'bar' => null, 'count' => 1, 'name' => 'name', 'isActive' => false], $resolver->getParams());
     }
-
-    //
 
     public function testGetParamsWithMethodContextWithoutParams(): void
     {
