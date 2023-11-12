@@ -32,6 +32,6 @@ class Resolver implements IResolver
 
     public function resolve(array $params = []): mixed
     {
-        return null;
+        return $this->strategy->resolve();
     }
 }

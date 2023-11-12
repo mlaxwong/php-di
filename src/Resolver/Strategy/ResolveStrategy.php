@@ -16,6 +16,8 @@ abstract class ResolveStrategy
         $this->handleDefaultParams();
     }
 
+    abstract function resolve(): mixed;
+
     /**
      * @return ReflectionParameter[]
      */
