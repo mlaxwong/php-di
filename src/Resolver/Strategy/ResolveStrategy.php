@@ -29,6 +29,11 @@ abstract class ResolveStrategy
         return $this->params;
     }
 
+    public function setParams(array $params): void
+    {
+        $this->resolveParams($params);
+    }
+
     /**
      * @return ReflectionParameter[]
      */
@@ -36,7 +41,7 @@ abstract class ResolveStrategy
 
     public function getNeeds(): array
     {
-        return [];
+        return array_values(array_diff(array_keys($this->getReflectionParams()), $this->solvedParams));
     }
 
     protected function paramsPlaceholder(): void
@@ -49,12 +54,12 @@ abstract class ResolveStrategy
     {
         foreach ($this->getReflectionParams() as $name => $reflectionParam) {
             if ($reflectionParam->isDefaultValueAvailable()) {
-                $this->solveParams([$name => $reflectionParam->getDefaultValue()]);
+                $this->resolveParams([$name => $reflectionParam->getDefaultValue()]);
             }
         }
     }
 
-    protected function solveParams(array $params): void
+    protected function resolveParams(array $params): void
     {
         $this->params = array_merge($this->params, $params);
         $this->solvedParams = array_merge($this->solvedParams, array_keys($params));
