@@ -5,10 +5,10 @@ namespace MlaxWong\DI\Tests\Samples;
 class Database
 {
     public function __construct(
-        private string $host,
-        private string $port,
-        private string $user,
-        private string $pass,
+        public string $host,
+        public string $port,
+        public string $user,
+        public string $pass,
     ) {
     }
 }

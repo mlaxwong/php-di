@@ -32,6 +32,9 @@ class Resolver implements IResolver
 
     public function resolve(array $params = []): mixed
     {
+        if ($params) {
+            $this->strategy->setParams($params);
+        }
         return $this->strategy->resolve();
     }
 }
