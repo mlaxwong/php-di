@@ -25,12 +25,18 @@
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7",
         "phpstan/phpstan": "^1.10",
-        "phpunit/phpunit": "^10.0"
+        "phpunit/phpunit": "^10.0",
+        "infection/infection": "^0.27.8"
     },
     "scripts": {
         "test": "php vendor/bin/phpunit",
         "cs": "php vendor/bin/phpcs",
         "cs:fix": "php vendor/bin/phpcbf",
         "stan": "php -d memory_limit=-1 vendor/bin/phpstan analyse --ansi"
+    },
+    "config": {
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
     }
 }
