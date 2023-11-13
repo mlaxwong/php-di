@@ -7,7 +7,7 @@ use MlaxWong\DI\Resolver\Strategy\ResolveStrategy;
 
 class Resolver implements IResolver
 {
-    private ResolveStrategy $strategy;
+    protected ResolveStrategy $strategy;
 
     public function __construct(mixed $context)
     {
