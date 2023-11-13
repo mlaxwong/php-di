@@ -24,6 +24,6 @@ class ClassResolveStrategy extends ResolveStrategy
 
     public function resolve(): mixed
     {
-        return $this->getParams() ?  $this->getReflection()->newInstance() : $this->getReflection()->newInstanceArgs($this->getParams());
+        return $this->getParams() ?  $this->getReflection()->newInstanceArgs($this->getParams()) : $this->getReflection()->newInstance();
     }
 }
